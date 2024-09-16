@@ -40,6 +40,7 @@ public class SlidersPuzzle : MonoBehaviour
             _lastSliderValue1 = _slider1.value;
             _lastSliderValue2 = _slider2.value;
         }
+        Check();
     }
 
     public void SecondSliderMoved()
@@ -53,6 +54,7 @@ public class SlidersPuzzle : MonoBehaviour
             _lastSliderValue3 = _slider3.value;
             _lastSliderValue4 = _slider4.value;
         }
+        Check();
     }
     public void ThirdSliderMoved()
     {
@@ -63,6 +65,7 @@ public class SlidersPuzzle : MonoBehaviour
             _lastSliderValue3 = _slider3.value;
             _lastSliderValue4 = _slider4.value;
         }
+        Check();
     }
     public void FourthSliderMoved()
     {
@@ -72,6 +75,24 @@ public class SlidersPuzzle : MonoBehaviour
             _slider1.value -= value;
             _lastSliderValue1 = _slider1.value;
             _lastSliderValue4 = _slider4.value;
+        }
+        Check();
+    }
+
+    public void Check()
+    {
+        if(_slider1.value>= 0.6f && _slider1.value<= 0.7f)
+        {
+            if(_slider2.value>= 0.2f && _slider2.value<= 0.3f)
+            {
+                if(_slider3.value>= 0.8f && _slider3.value<= 0.9f)
+                {
+                    if(_slider4.value>= 0.4f && _slider4.value<= 0.5f)
+                    {
+                        print("Win");
+                    }
+                }
+            }
         }
     }
 }

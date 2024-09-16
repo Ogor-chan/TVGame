@@ -9,6 +9,7 @@ public class MenuNavigation : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject _pauseMenuObject;
     [SerializeField] private GameObject _settingsMenuObject;
+    [SerializeField] private GameObject _helpMenuObject;
 
     public void settingsMenuClick()
     {
@@ -20,6 +21,12 @@ public class MenuNavigation : MonoBehaviour
     {
         _pauseMenuObject.SetActive(true);
         _settingsMenuObject.SetActive(false);
+    }
+
+    public void backFromHelpClick()
+    {
+        _settingsMenuObject.SetActive(true);
+        _helpMenuObject.SetActive(false);
     }
 
 }
