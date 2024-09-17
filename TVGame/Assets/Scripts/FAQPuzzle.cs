@@ -9,6 +9,8 @@ public class FAQPuzzle : MonoBehaviour
     [SerializeField] private GameObject _helpMenu;
     [SerializeField] private GameObject _miniGameWindow;
 
+    [SerializeField] private List<GameObject> _slides;
+
     private int _currentSlide = 0;
     private int _points;
 
@@ -16,22 +18,81 @@ public class FAQPuzzle : MonoBehaviour
     {
         _miniGameWindow.SetActive(true);
         _helpMenu.SetActive(false);
+        _slides[0].SetActive(true);
     }
 
     public void QuizButtonClick(int _whichButton)
     {
-        if(_currentSlide == 0 && _whichButton == 0)
+        switch (_currentSlide)
         {
-            _points++;
+            case 0:
+                if(_whichButton == 0)
+                {
+                    _points++;
+                }
+                break;
+            case 1:
+                if (_whichButton == 3)
+                {
+                    _points++;
+                }
+                break;
+            case 2:
+                if (_whichButton == 2)
+                {
+                    _points++;
+                }
+                break;
+            case 3:
+                if (_whichButton == 3)
+                {
+                    _points++;
+                }
+                break;
+            case 4:
+                if (_whichButton == 1)
+                {
+                    _points++;
+                }
+                break;
+            case 5:
+                if (_whichButton == 0)
+                {
+                    _points++;
+                }
+                break;
+            case 6:
+                if (_whichButton == 1)
+                {
+                    _points++;
+                }
+                break;
         }
 
-
-
+        NextSlide();
 
     }
 
     public void NextSlide()
     {
+        print(_points);
+        _slides[_currentSlide].SetActive(false);
+        _currentSlide++;
+        if(_currentSlide == 7)
+        {
+            if(_points == 7)
+            {
+                print("Win");
+            }
+            _points = 0;
+            _currentSlide = 0;
+            _miniGameWindow.SetActive(false);
+            _helpMenu.SetActive(true);
+        }
+        else
+        {
+            _slides[_currentSlide].SetActive(true);
+        }
 
     }
 
