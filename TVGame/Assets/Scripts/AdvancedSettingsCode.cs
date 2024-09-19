@@ -8,23 +8,26 @@ using UnityEngine.EventSystems;
 public class AdvancedSettingsCode : MonoBehaviour
 {
     ////////////////////////////////////////////////////////////
+    [Header("Lock")]
     [SerializeField] private TMP_InputField _codeInput;
     [SerializeField] private GameObject _lockScreen;
     [SerializeField] private GameObject _menuContent;
     [SerializeField] private GameObject _correctText;
     ////////////////////////////////////////////////////////////
+    [Header("SerialNumber")]
     [SerializeField] private TMP_Text _serialNumberText;
     private int _serialNumber;
     ////////////////////////////////////////////////////////////
+    [Header("Login")]
     public bool _firstTimePress = false;
     public GameObject _popupAble;
     [SerializeField] private TMP_Text _reminderText;
     [SerializeField] private TMP_InputField _loginInput;
     [SerializeField] private TMP_InputField _passwordInput;
     ////////////////////////////////////////////////////////////
+    [Header("Arrows")]
     [SerializeField] private GameObject _miniGame;
     [SerializeField] private GameObject _advancedSettingsMenu;
-    [SerializeField] private List<Button> _arrowButtons;
     private int _arrowCode;
     public void InputChanged()
     {
@@ -121,18 +124,13 @@ public class AdvancedSettingsCode : MonoBehaviour
         {
             _arrowCode = int.Parse(_arrowCode.ToString().Remove(0, 1));
         }
-        if(_arrowCode == 221431)
+        if(_arrowCode == 111222)
         {
-            //Transport to minigame
+            _miniGame.SetActive(true);
+            _advancedSettingsMenu.SetActive(false);
         }
         print(_arrowCode);
     }
-
-    private void UnclickButtons()
-    {
-
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
