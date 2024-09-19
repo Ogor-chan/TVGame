@@ -38,6 +38,9 @@ public class MenuNavigation : MonoBehaviour
 
     public void backFromAdvancedSettingsClick()
     {
+        AdvancedSettingsCode ASC = _advancedSettingsMenuObject.GetComponent<AdvancedSettingsCode>();
+        ASC._firstTimePress = false;
+        ASC._popupAble.SetActive(false);
         _settingsMenuObject.SetActive(true);
         _advancedSettingsMenuObject.SetActive(false);
     }
