@@ -11,15 +11,23 @@ public class MenuNavigation : MonoBehaviour
     [SerializeField] private GameObject _settingsMenuObject;
     [SerializeField] private GameObject _helpMenuObject;
     [SerializeField] private GameObject _advancedSettingsMenuObject;
+    [SerializeField] private GameObject _deerGame;
 
+    private PlayerControl PC;
+    private void Start()
+    {
+        PC = GameObject.Find("GameManager").GetComponent<PlayerControl>();
+    }
     public void settingsMenuClick()
     {
+        PC._pauseLock = true;
         _pauseMenuObject.SetActive(false);
         _settingsMenuObject.SetActive(true);
     }
 
     public void pauseMenuClick()
     {
+        PC._pauseLock = false;
         _pauseMenuObject.SetActive(true);
         _settingsMenuObject.SetActive(false);
     }
@@ -45,4 +53,10 @@ public class MenuNavigation : MonoBehaviour
         _advancedSettingsMenuObject.SetActive(false);
     }
 
+    public void deerMinigameClick()
+    {
+        PC._pauseLock = true;
+        _deerGame.SetActive(true);
+        _pauseMenuObject.SetActive(false);
+    }
 }

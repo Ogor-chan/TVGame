@@ -37,6 +37,7 @@ public class NoteBehaviour : MonoBehaviour
                 {
                     print("Wrong timing");
                     NS.GotError();
+                    Destroy(this.gameObject);
                 }
             }
         }
@@ -52,6 +53,7 @@ public class NoteBehaviour : MonoBehaviour
                 {
                     print("Wrong timing");
                     NS.GotError();
+                    Destroy(this.gameObject);
                 }
             }
         }
@@ -67,6 +69,7 @@ public class NoteBehaviour : MonoBehaviour
                 {
                     print("Wrong timing");
                     NS.GotError();
+                    Destroy(this.gameObject);
                 }
             }
         }
@@ -82,6 +85,7 @@ public class NoteBehaviour : MonoBehaviour
                 {
                     print("Wrong timing");
                     NS.GotError();
+                    Destroy(this.gameObject);
                 }
             }
         }
