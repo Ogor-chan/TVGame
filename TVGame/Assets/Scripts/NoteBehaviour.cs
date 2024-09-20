@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteBehaviour : MonoBehaviour
 {
-    private float _fallingSpeed = 200f;
+    private float _fallingSpeed = 250f;
     public int _whichButton;
     [SerializeField] private RectTransform _myTransform;
     private NoteSpawning NS;
@@ -29,7 +29,7 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if(_myTransform.position.y < 80f && _myTransform.position.y > -20)
+                if(_myTransform.position.y < 130f && _myTransform.position.y > 30f)
                 {
                     Destroy(this.gameObject);
                 }
@@ -45,7 +45,7 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if (_myTransform.position.y < 80f && _myTransform.position.y > -20)
+                if (_myTransform.position.y < 130f && _myTransform.position.y > 30)
                 {
                     Destroy(this.gameObject);
                 }
@@ -61,7 +61,7 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (_myTransform.position.y < 80f && _myTransform.position.y > -20)
+                if (_myTransform.position.y < 130f && _myTransform.position.y > 0)
                 {
                     Destroy(this.gameObject);
                 }
@@ -77,7 +77,7 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (_myTransform.position.y < 80f && _myTransform.position.y > -20)
+                if (_myTransform.position.y < 130f && _myTransform.position.y > 30)
                 {
                     Destroy(this.gameObject);
                 }
@@ -91,7 +91,7 @@ public class NoteBehaviour : MonoBehaviour
         }
 
 
-        if(_myTransform.position.y < -20f)
+        if(_myTransform.position.y < 30f)
         {
             print("Missed");
             NS.GotError();

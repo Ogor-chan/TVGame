@@ -5,25 +5,21 @@ using UnityEngine.UI;
 
 public class ArrowButtonAnim : MonoBehaviour
 {
-    [SerializeField] private Color _initColor;
-    [SerializeField] private Color _clickColor;
+    [SerializeField] private Sprite _initSprite;
+    [SerializeField] private Sprite _clickSprite;
     [SerializeField] private Image _buttonImage;
 
     [SerializeField] private KeyCode _buttonArrow;
 
-    private void Start()
-    {
-        _buttonImage.color = _initColor;
-    }
     private void Update()
     {
         if (Input.GetKeyDown(_buttonArrow))
         {
-            _buttonImage.color = _clickColor;
+            _buttonImage.sprite = _clickSprite;
         }
         if (Input.GetKeyUp(_buttonArrow))
         {
-            _buttonImage.color = _initColor;
+            _buttonImage.sprite = _initSprite;
         }
     }
 

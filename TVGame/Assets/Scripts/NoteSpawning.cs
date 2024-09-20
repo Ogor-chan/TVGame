@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class NoteSpawning : MonoBehaviour
 {
     ///Okay so this is gonna be totaly retarded but i dont care
@@ -19,7 +19,7 @@ public class NoteSpawning : MonoBehaviour
     // 0 - Left, 1 - Up, 2 - Down, 3 - Right
     // TAK WIEM ¯E JU¯ POWINIENEM ZROBIÆ ENUMA 
     private float _noteInterval = 1f;
-    [SerializeField] private GameObject _notePrefab;
+    [SerializeField] private GameObject[] _notePrefabs;
     private int _currentNote = 0;
 
     private int _erorrs;
@@ -31,35 +31,35 @@ public class NoteSpawning : MonoBehaviour
     [SerializeField] private GameObject _miniGame;
     [SerializeField] private GameObject _advancedSettingsMenu;
 
+    [SerializeField] private Sprite _leftArrowSprite;
+    [SerializeField] private Sprite _upArrowSprite;
+    [SerializeField] private Sprite _downArrowSprite;
+    [SerializeField] private Sprite _rightArrowSprite;
+
     IEnumerator PlayingNotes()
     {
         if (_leftNotes[_currentNote] == true)
         {
-            GameObject spawnedNote = Instantiate(_notePrefab,
-                _spawnPositions[0], Quaternion.identity);
-            spawnedNote.transform.SetParent(transform, true);
-            spawnedNote.GetComponent<NoteBehaviour>()._whichButton = 0;
+            GameObject spawnedNote = Instantiate(_notePrefabs[0],
+                _spawnPositions[0], Quaternion.identity, transform);
         }
         if (_upNotes[_currentNote] == true)
         {
-            GameObject spawnedNote = Instantiate(_notePrefab,
-                _spawnPositions[1], Quaternion.identity);
-            spawnedNote.transform.SetParent(transform, true);
-            spawnedNote.GetComponent<NoteBehaviour>()._whichButton = 1;
+            GameObject spawnedNote = Instantiate(_notePrefabs[1],
+                _spawnPositions[1], Quaternion.identity, transform);
+
         }
         if (_downNotes[_currentNote] == true)
         {
-            GameObject spawnedNote = Instantiate(_notePrefab,
-                _spawnPositions[2], Quaternion.identity);
-            spawnedNote.transform.SetParent(transform, true);
-            spawnedNote.GetComponent<NoteBehaviour>()._whichButton = 2;
+            GameObject spawnedNote = Instantiate(_notePrefabs[2],
+                _spawnPositions[2], Quaternion.identity,transform);
+
         }
         if (_rightNotes[_currentNote] == true)
         {
-            GameObject spawnedNote = Instantiate(_notePrefab,
-                _spawnPositions[3], Quaternion.identity);
-            spawnedNote.transform.SetParent(transform, true);
-            spawnedNote.GetComponent<NoteBehaviour>()._whichButton = 3;
+            GameObject spawnedNote = Instantiate(_notePrefabs[3],
+                _spawnPositions[3], Quaternion.identity, transform);
+
         }
 
 
