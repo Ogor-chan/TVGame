@@ -26,7 +26,7 @@ public class FAQPuzzle : MonoBehaviour
         switch (_currentSlide)
         {
             case 0:
-                if(_whichButton == 0)
+                if(_whichButton == 3)
                 {
                     _points++;
                 }
