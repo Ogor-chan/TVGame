@@ -6,6 +6,7 @@ public class Zooming : MonoBehaviour
 {
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _animator1;
 
     private void Update()
     {
@@ -21,7 +22,8 @@ public class Zooming : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
-            _animator.Play("StaticAnimation");
+            print("ye");
+            _animator1.Play("StaticAnimation");
         }
     }
 
