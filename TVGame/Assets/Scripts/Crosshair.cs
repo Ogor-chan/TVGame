@@ -8,11 +8,11 @@ public class Crosshair : MonoBehaviour
     public RectTransform crosshair;
     public Canvas canvas;
 
-    private void Start()
+
+    private void OnEnable()
     {
         Cursor.visible = false;
     }
-
     //asss
     void Update()
     {

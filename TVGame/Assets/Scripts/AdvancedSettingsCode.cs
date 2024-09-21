@@ -9,10 +9,11 @@ public class AdvancedSettingsCode : MonoBehaviour
 {
     ////////////////////////////////////////////////////////////
     [Header("Lock")]
-    [SerializeField] private TMP_InputField _codeInput;
-    [SerializeField] private GameObject _lockScreen;
-    [SerializeField] private GameObject _menuContent;
-    [SerializeField] private GameObject _correctText;
+    public TMP_InputField _codeInput;
+    public GameObject _lockScreen;
+    public GameObject _menuContent;
+    public GameObject _correctText;
+    [SerializeField] private GameObject _backButton;
     ////////////////////////////////////////////////////////////
     [Header("SerialNumber")]
     [SerializeField] private TMP_Text _serialNumberText;
@@ -35,11 +36,13 @@ public class AdvancedSettingsCode : MonoBehaviour
         {
             _correctText.SetActive(true);
             _codeInput.interactable = false;
+            _backButton.SetActive(false);
             Invoke("CorrectCode", 2f);
         }
     }
     public void CorrectCode()
     {
+        _backButton.SetActive(true);
         _correctText.SetActive(false);
         _lockScreen.SetActive(false);
         _menuContent.SetActive(true);

@@ -49,6 +49,11 @@ public class MenuNavigation : MonoBehaviour
         AdvancedSettingsCode ASC = _advancedSettingsMenuObject.GetComponent<AdvancedSettingsCode>();
         ASC._firstTimePress = false;
         ASC._popupAble.SetActive(false);
+        ASC._lockScreen.SetActive(true);
+        ASC._menuContent.SetActive(false);
+        ASC._correctText.SetActive(false);
+        ASC._codeInput.text = "";
+        ASC._codeInput.interactable = true;
         _settingsMenuObject.SetActive(true);
         _advancedSettingsMenuObject.SetActive(false);
     }

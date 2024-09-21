@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Video;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] private GameObject _deerButton;
     [SerializeField] private GameObject _crowButton;
+
+    [SerializeField] private VideoPlayer _videoPlayer;
 
     public bool _pauseLock = false;
 
@@ -58,32 +61,18 @@ public class PlayerControl : MonoBehaviour
         {
             if (!_pauseMenu.activeInHierarchy)
             {
+                _videoPlayer.Pause();
                 _paused = true;
                 _timesPaused++;
                 print(_timesPaused);
             }
             else
             {
+                _videoPlayer.Play();
                 _paused = false;
             }
             _pauseMenu.SetActive(!_pauseMenu.activeInHierarchy);
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Ending();
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            _animCamera.Play("CameraZoomIn");
-        }
-
     }
-
-    public void Ending()
-    {
-        _animCamera.Play("CameraZoomOut");
-    }
-
 }

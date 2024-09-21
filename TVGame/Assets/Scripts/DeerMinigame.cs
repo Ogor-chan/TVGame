@@ -59,6 +59,7 @@ public class DeerMinigame : MonoBehaviour
 
     public void Lost()
     {
+        Cursor.visible = true;
         _targetsHit = 0;
         print("lost");
         _pauseMenu.SetActive(true);
