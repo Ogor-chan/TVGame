@@ -18,9 +18,10 @@ public class NoteSpawning : MonoBehaviour
     [SerializeField] private Vector3[] _spawnPositions;
     // 0 - Left, 1 - Up, 2 - Down, 3 - Right
     // TAK WIEM ¯E JU¯ POWINIENEM ZROBIÆ ENUMA 
-    private float _noteInterval = 1f;
+    private float _noteInterval = 0.5f;
     [SerializeField] private GameObject[] _notePrefabs;
     private int _currentNote = 0;
+    [SerializeField] private AudioSource AS;
 
     private int _erorrs;
     [SerializeField] private GameObject[] _errorObjects;
@@ -95,6 +96,7 @@ public class NoteSpawning : MonoBehaviour
             {
                 item.SetActive(false);
             }
+            AS.Stop();
             _currentNote = 0;
             _miniGame.SetActive(false);
             ES.ActivateEnding(0);
@@ -111,6 +113,13 @@ public class NoteSpawning : MonoBehaviour
     private void OnEnable()
     {
         Invoke("Delay", 2f);
+        Invoke("MusicDelay", 3f);
+
+    }
+
+    private void MusicDelay()
+    {
+        AS.Play();
     }
     public void GotError()
     {

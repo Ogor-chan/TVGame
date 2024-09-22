@@ -14,6 +14,8 @@ public class EndingSystem : MonoBehaviour
     [SerializeField] private GameObject[] _trophies;
     [SerializeField] private GameObject _playerController;
     [SerializeField] private GameObject _playButton;
+    [SerializeField] private OldTVHints _oldTV;
+    [SerializeField] private AudioSource ASS;
 
     private string _trophiesEarned;
 
@@ -22,6 +24,7 @@ public class EndingSystem : MonoBehaviour
     {
         _trophiesEarned = PlayerPrefs.GetString("save");
         PC = _playerController.GetComponent<PlayerControl>();
+        _oldTV = GameObject.Find("OldTV").GetComponent<OldTVHints>();
 
         print(_trophiesEarned);
         int whichLoop = 0;
@@ -50,9 +53,11 @@ public class EndingSystem : MonoBehaviour
     }
     public void ActivateEnding(int _whichEnding)
     {
+        ASS.Play();
         PC.PauseVideo();
         _static.SetActive(true);
         _playerController.SetActive(false);
+        _oldTV.RollaHint();
 
         StringBuilder modifiedString = new StringBuilder(_trophiesEarned);
         modifiedString[_whichEnding + 1] = (char)('0'+ 1);
@@ -85,6 +90,7 @@ public class EndingSystem : MonoBehaviour
 
     public void PlayButtonClick()
     {
+        ASS.Stop();
         _Z.ZoomIn();
         _static.SetActive(false);
         _playerController.SetActive(true);

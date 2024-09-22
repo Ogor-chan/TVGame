@@ -1542,20 +1542,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787f83c479f35284d8b4563c6f6166b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftNotes: 010100010100010101000001010001000000010001000100000000010100
-  _upNotes: 000000000000000100010100000100000101010001010000010001000101
-  _downNotes: 000000000000000000000000000001010000000001000000000100010000
-  _rightNotes: 000000000000000000000000010001010001000100010000010101010101
+  _leftNotes: 01000000010000010001010000000100000100000100010000010001010001000001000001000100010000010001000000010001000100000000000100000100000000010000010001000100010000000100000100010001010000000000000000000000
+  _upNotes: 00010100000001000000010000010000010001000101000001000100000001000100000001010001000001000100010100000001000000010000000100010000010000000001000001010100000000000001010000010000010000000000000000000000
+  _downNotes: 00000001000000010001000100000001010001010100010000010101000001000100010001000100000001000001010000010001000100000100000001010100000001010100000001000001000000010001000000010001010000000000000000000000
+  _rightNotes: 00000001000100000100010001000101000100010001000001000001000101000000000000010101000100010100000000010100010000010000010100000001010000000001010000010100000100000100010000010000010000000000000000000000
   _spawnPositions:
-  - {x: 325, y: 500, z: 0}
-  - {x: 375, y: 500, z: 0}
-  - {x: 425, y: 500, z: 0}
-  - {x: 475, y: 500, z: 0}
+  - {x: 315, y: 500, z: 0}
+  - {x: 365, y: 500, z: 0}
+  - {x: 415, y: 500, z: 0}
+  - {x: 465, y: 500, z: 0}
   _notePrefabs:
   - {fileID: 7827092076203040586, guid: 7462199fd8adfa6459c3574ae969ece6, type: 3}
   - {fileID: 7827092076203040586, guid: db84bbc651ea7f4438cacb71e3e425f7, type: 3}
   - {fileID: 7827092076203040586, guid: 35b98b9c5f59de7429317652461c896a, type: 3}
   - {fileID: 7827092076203040586, guid: 47c72d52f621e54488a6a5bf0ba92df0, type: 3}
+  AS: {fileID: 379623117}
   _errorObjects:
   - {fileID: 1375929256}
   - {fileID: 1353978289}
@@ -4700,6 +4701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279932062}
   - component: {fileID: 279932061}
+  - component: {fileID: 279932063}
   m_Layer: 0
   m_Name: Endings
   m_TagString: Untagged
@@ -4738,6 +4740,8 @@ MonoBehaviour:
   - {fileID: 2015740831}
   _playerController: {fileID: 1553279602}
   _playButton: {fileID: 1147366184}
+  _oldTV: {fileID: 0}
+  ASS: {fileID: 279932063}
 --- !u!4 &279932062
 Transform:
   m_ObjectHideFlags: 0
@@ -4753,6 +4757,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &279932063
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279932060}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4b5318be5c84a8a46bb85e817b6320eb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &291864285
 GameObject:
   m_ObjectHideFlags: 0
@@ -7425,6 +7525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 379623116}
+  - component: {fileID: 379623117}
   m_Layer: 5
   m_Name: ArrowsMinigame
   m_TagString: Untagged
@@ -7455,6 +7556,102 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &379623117
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379623115}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a60d3b455e9ea5844acdc3b37d2c7879, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &380975338
 GameObject:
   m_ObjectHideFlags: 0
@@ -26408,6 +26605,7 @@ MonoBehaviour:
     type: 3}
   _pauseMenu: {fileID: 1352183607}
   _miniGame: {fileID: 1551986343}
+  PC: {fileID: 0}
 --- !u!1 &1553279602
 GameObject:
   m_ObjectHideFlags: 0
@@ -33895,7 +34093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Phone number in the car
+  m_text: Watch closely for a question to ask
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0a78f31a1e63244ea877bf981ddbafe, type: 2}
   m_sharedMaterial: {fileID: -5349960176063954822, guid: b0a78f31a1e63244ea877bf981ddbafe,
@@ -33923,8 +34121,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -34134,6 +34332,7 @@ GameObject:
   - component: {fileID: 1932659701}
   - component: {fileID: 1932659703}
   - component: {fileID: 1932659702}
+  - component: {fileID: 1932659704}
   m_Layer: 5
   m_Name: OldTV
   m_TagString: Untagged
@@ -34199,6 +34398,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932659700}
   m_CullTransparentMesh: 1
+--- !u!114 &1932659704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932659700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74c6267f1752b942b0bd424332f8ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tvText: {fileID: 1922487413}
+  _texts:
+  - Look for a combination of arrows
+  - Try spamming the pause button
+  - Look for flags at the beginning
+  - 1
+  - Watch closely for a question to ask
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!1 &1940030878
 GameObject:
   m_ObjectHideFlags: 0
