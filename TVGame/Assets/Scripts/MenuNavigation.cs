@@ -17,7 +17,7 @@ public class MenuNavigation : MonoBehaviour
     private PlayerControl PC;
     private void Start()
     {
-        PC = GameObject.Find("GameManager").GetComponent<PlayerControl>();
+        PC = GameObject.Find("PlayerController").GetComponent<PlayerControl>();
     }
     public void settingsMenuClick()
     {

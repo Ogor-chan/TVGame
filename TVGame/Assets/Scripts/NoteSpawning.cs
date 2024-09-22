@@ -36,6 +36,13 @@ public class NoteSpawning : MonoBehaviour
     [SerializeField] private Sprite _downArrowSprite;
     [SerializeField] private Sprite _rightArrowSprite;
 
+    private EndingSystem ES;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+    }
+
     IEnumerator PlayingNotes()
     {
         if (_leftNotes[_currentNote] == true)
@@ -77,10 +84,20 @@ public class NoteSpawning : MonoBehaviour
             {
                 item.SetActive(false);
             }
+
+            _erorrs = 0;
+            _erorrLock = false;
+            foreach (Transform child in this.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            foreach (var item in _errorObjects)
+            {
+                item.SetActive(false);
+            }
             _currentNote = 0;
-            _advancedSettingsMenu.SetActive(true);
             _miniGame.SetActive(false);
-            print("win");
+            ES.ActivateEnding(0);
         }
         yield return new WaitForSecondsRealtime(_noteInterval);
         StartCoroutine(PlayingNotes());

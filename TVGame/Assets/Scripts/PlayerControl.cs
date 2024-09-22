@@ -15,12 +15,20 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] private VideoPlayer _videoPlayer;
 
+    [SerializeField] private EndingSystem ES;
+
     public bool _pauseLock = false;
 
     private bool _paused;
 
     private int _timesPaused;
     private float _clipPlayedFor;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+        PauseVideo();
+    }
 
     void Update()
     {
@@ -34,9 +42,11 @@ public class PlayerControl : MonoBehaviour
             print("win");
         }
 
-        if(_timesPaused >= 20)
+        if(_timesPaused >= 10)
         {
-            print("WIN");
+            _timesPaused = 0;
+            _clipPlayedFor = 0;
+            ES.ActivateEnding(1);
         }
         ///CrowButton
         if(_clipPlayedFor >= 10f && _clipPlayedFor <= 10.5f)
@@ -61,18 +71,36 @@ public class PlayerControl : MonoBehaviour
         {
             if (!_pauseMenu.activeInHierarchy)
             {
-                _videoPlayer.Pause();
+                PauseVideo();
                 _paused = true;
                 _timesPaused++;
                 print(_timesPaused);
             }
             else
             {
-                _videoPlayer.Play();
+                PlayVideo();
                 _paused = false;
             }
             _pauseMenu.SetActive(!_pauseMenu.activeInHierarchy);
         }
 
+    }
+
+
+
+    public void PlayVideo()
+    {
+        _videoPlayer.Play();
+    }
+
+    public void PauseVideo()
+    {
+        _videoPlayer.Pause();
+    }
+
+    public void ReplayVideo()
+    {
+        _videoPlayer.frame = 0;
+        _videoPlayer.Play();
     }
 }
