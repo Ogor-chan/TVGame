@@ -38,7 +38,7 @@ public class AnimalsPuzzle : MonoBehaviour
         }
 
         print(_rightAnimals);
-        if(_rightAnimals == 6 && _wrongAnimals == 0)
+        if(_rightAnimals == 3 && _wrongAnimals == 0)
         {
             print("Win");
         }
