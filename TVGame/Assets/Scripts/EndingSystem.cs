@@ -21,13 +21,22 @@ public class EndingSystem : MonoBehaviour
     private string _trophiesEarned;
 
     private PlayerControl PC;
+
+
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("firstTime"))
+        {
+            print("first time");
+            PlayerPrefs.SetString("save", "90000000000000009");
+            PlayerPrefs.SetInt("firstTime", 0);
+            PlayerPrefs.Save();
+        }
+
         _trophiesEarned = PlayerPrefs.GetString("save");
         PC = _playerController.GetComponent<PlayerControl>();
         _oldTV = GameObject.Find("OldTV").GetComponent<OldTVHints>();
 
-        print(_trophiesEarned);
         int whichLoop = 0;
         foreach (char c in _trophiesEarned)
         {
@@ -40,18 +49,6 @@ public class EndingSystem : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ActivateEnding(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            PlayerPrefs.SetString("save", 9000000000000009.ToString());
-            PlayerPrefs.Save();
-        }
-    }
     public void ActivateEnding(int _whichEnding)
     {
         ASS.Play();
@@ -60,6 +57,7 @@ public class EndingSystem : MonoBehaviour
         _static.SetActive(true);
         _playerController.SetActive(false);
         _oldTV.RollaHint();
+        PC.End();
 
         StringBuilder modifiedString = new StringBuilder(_trophiesEarned);
         modifiedString[_whichEnding + 1] = (char)('0'+ 1);
@@ -83,6 +81,32 @@ public class EndingSystem : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         _trophy.GetComponent<Image>().color = Color.white;
+
+        int howManyZeros = 0;
+        foreach (char c in _trophiesEarned)
+        {
+            if (c == '0')
+            {
+                howManyZeros++;
+            }
+
+        }
+
+        if(howManyZeros == 1)
+        {
+            StringBuilder modifiedString = new StringBuilder(_trophiesEarned);
+            modifiedString[15] = (char)('0' + 1);
+            _trophiesEarned = modifiedString.ToString();
+            PlayerPrefs.SetString("save", _trophiesEarned);
+            PlayerPrefs.Save();
+            _trophy = _trophies[14];
+            _trophy.GetComponent<Image>().color = Color.black;
+            _trophy.SetActive(true);
+
+            yield return new WaitForSecondsRealtime(1f);
+
+            _trophy.GetComponent<Image>().color = Color.white;
+        }
 
         yield return new WaitForSecondsRealtime(2f);
         _playButton.SetActive(true);

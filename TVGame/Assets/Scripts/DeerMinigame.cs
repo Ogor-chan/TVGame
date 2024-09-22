@@ -58,8 +58,12 @@ public class DeerMinigame : MonoBehaviour
         GameObject _spawnedObject = Instantiate(_targetPrefab, _randomPosition,
             Quaternion.identity);
 
+        RectTransform RT = _spawnedObject.GetComponent<RectTransform>();
+
         _spawnedObject.transform.SetParent(transform,true);
         _spawnedObject.transform.localScale *= Random.Range(0.3f, 1.5f);
+        RT.anchoredPosition = new Vector2(Random.Range(-1200, 1200),
+            Random.Range(-600, 600));
         _spawnedObject.GetComponent<DeerBehaviour>().DM = this.GetComponent<DeerMinigame>();
         _spawnedObject.GetComponent<Button>().onClick.AddListener(delegate { TargetHit(); });
 

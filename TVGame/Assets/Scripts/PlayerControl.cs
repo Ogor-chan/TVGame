@@ -24,9 +24,17 @@ public class PlayerControl : MonoBehaviour
 
     private bool _paused;
 
-    private int _timesPaused;
-    private float _clipPlayedFor;
+    public int _timesPaused;
+    public float _clipPlayedFor;
 
+
+    public void End()
+    {
+        _timesPaused = 0;
+        _clipPlayedFor = 0;
+        _deerButton.SetActive(false);
+        _crowButton.SetActive(false);
+    }
     private void Start()
     {
         ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
@@ -36,6 +44,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (!_paused)
         {
+            Time.timeScale = 1;
             _clipPlayedFor += Time.deltaTime;
         }
 

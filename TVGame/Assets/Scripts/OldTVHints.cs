@@ -21,7 +21,6 @@ public class OldTVHints : MonoBehaviour
     {
         _trophiesEarned = PlayerPrefs.GetString("save");
 
-        print(_trophiesEarned);
         int whichLoop = 0;
         foreach (char c in _trophiesEarned)
         {
@@ -38,7 +37,15 @@ public class OldTVHints : MonoBehaviour
     {
         _endingsNotAchieved.Clear();
         UpdateList();
-        print(_endingsNotAchieved.Count);
+        if (_endingsNotAchieved.Count == 0)
+        {
+            _tvText.text = "You know it all, theres nothing left";
+            return;
+        }
+        foreach (var item in _endingsNotAchieved)
+        {
+            print(item);
+        }
         _tvText.text = _texts[_endingsNotAchieved[Random.Range(0,
             _endingsNotAchieved.Count -1)]];
     }

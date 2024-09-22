@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class NoteBehaviour : MonoBehaviour
 {
-    private float _fallingSpeed = 250f;
+    private float _fallingSpeed = 500f;
     public int _whichButton;
     [SerializeField] private RectTransform _myTransform;
     private NoteSpawning NS;
+    private RectTransform RT;
     private void Start()
     {
         NS = GameObject.Find("NoteSpawner").GetComponent<NoteSpawning>();
+        RT = GetComponent<RectTransform>();
     }
 
     // 0 - Left
@@ -22,18 +24,19 @@ public class NoteBehaviour : MonoBehaviour
     {
         ///Ye ye a tone of if statements inside an update function in a 
         ///frequently spawning prefab, not my proudest work
-        _myTransform.position = new Vector3(_myTransform.position.x,
-            _myTransform.position.y - _fallingSpeed * Time.deltaTime,
-            _myTransform.position.z);
+        ///
+        RT.anchoredPosition = new Vector3(RT.anchoredPosition.x,
+            RT.anchoredPosition.y - _fallingSpeed * Time.deltaTime,0);
+
         if(_whichButton == 0)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                if(_myTransform.position.y < 130f && _myTransform.position.y > 30f)
+                if(RT.anchoredPosition.y < -350f && RT.anchoredPosition.y > -600f)
                 {
                     Destroy(this.gameObject);
                 }
-                else if (_myTransform.position.y < 200f)
+                else if (RT.anchoredPosition.y < -200f)
                 {
                     print("Wrong timing");
                     NS.GotError();
@@ -45,11 +48,11 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                if (_myTransform.position.y < 130f && _myTransform.position.y > 30)
+                if (RT.anchoredPosition.y < -350f && RT.anchoredPosition.y > -600)
                 {
                     Destroy(this.gameObject);
                 }
-                else if (_myTransform.position.y < 200f)
+                else if (RT.anchoredPosition.y < -200f)
                 {
                     print("Wrong timing");
                     NS.GotError();
@@ -61,11 +64,11 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                if (_myTransform.position.y < 130f && _myTransform.position.y > 0)
+                if (RT.anchoredPosition.y < -350f && RT.anchoredPosition.y > -600)
                 {
                     Destroy(this.gameObject);
                 }
-                else if (_myTransform.position.y < 200f)
+                else if (RT.anchoredPosition.y < -200f)
                 {
                     print("Wrong timing");
                     NS.GotError();
@@ -77,11 +80,11 @@ public class NoteBehaviour : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                if (_myTransform.position.y < 130f && _myTransform.position.y > 30)
+                if (RT.anchoredPosition.y < -350f && RT.anchoredPosition.y > -600)
                 {
                     Destroy(this.gameObject);
                 }
-                else if (_myTransform.position.y < 200f)
+                else if (RT.anchoredPosition.y < -200f)
                 {
                     print("Wrong timing");
                     NS.GotError();
@@ -91,7 +94,7 @@ public class NoteBehaviour : MonoBehaviour
         }
 
 
-        if(_myTransform.position.y < 30f)
+        if(RT.anchoredPosition.y < -600f)
         {
             print("Missed");
             NS.GotError();

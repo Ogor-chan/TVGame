@@ -16,10 +16,18 @@ public class Crosshair : MonoBehaviour
     //asss
     void Update()
     {
-        Vector2 cursorPosition;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform,
-            Input.mousePosition, canvas.worldCamera, out cursorPosition);
+        Vector2 mousePosition = Input.mousePosition;
 
-        crosshair.anchoredPosition = cursorPosition;
+        Vector2 localPoint;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            mousePosition,
+            canvas.worldCamera,
+            out localPoint
+        );
+
+        Vector2 adjustedPosition = localPoint / crosshair.parent.localScale;
+
+        crosshair.anchoredPosition = adjustedPosition;
     }
 }

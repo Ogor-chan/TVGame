@@ -50,24 +50,29 @@ public class NoteSpawning : MonoBehaviour
         {
             GameObject spawnedNote = Instantiate(_notePrefabs[0],
                 _spawnPositions[0], Quaternion.identity, transform);
+            RectTransform RT = spawnedNote.GetComponent<RectTransform>();
+            RT.anchoredPosition = _spawnPositions[0];
         }
         if (_upNotes[_currentNote] == true)
         {
             GameObject spawnedNote = Instantiate(_notePrefabs[1],
                 _spawnPositions[1], Quaternion.identity, transform);
-
+            RectTransform RT = spawnedNote.GetComponent<RectTransform>();
+            RT.anchoredPosition = _spawnPositions[1];
         }
         if (_downNotes[_currentNote] == true)
         {
             GameObject spawnedNote = Instantiate(_notePrefabs[2],
                 _spawnPositions[2], Quaternion.identity,transform);
-
+            RectTransform RT = spawnedNote.GetComponent<RectTransform>();
+            RT.anchoredPosition = _spawnPositions[2];
         }
         if (_rightNotes[_currentNote] == true)
         {
             GameObject spawnedNote = Instantiate(_notePrefabs[3],
                 _spawnPositions[3], Quaternion.identity, transform);
-
+            RectTransform RT = spawnedNote.GetComponent<RectTransform>();
+            RT.anchoredPosition = _spawnPositions[3];
         }
 
 
