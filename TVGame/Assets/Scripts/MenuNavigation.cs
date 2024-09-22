@@ -14,6 +14,7 @@ public class MenuNavigation : MonoBehaviour
     [SerializeField] private GameObject _deerGame;
     [SerializeField] private GameObject _animalMenu;
 
+    public AudioSource ASss;
 
     [SerializeField] private PlayerControl PC;
     public void settingsMenuClick()

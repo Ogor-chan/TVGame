@@ -16,6 +16,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private VideoPlayer _videoPlayer;
 
     [SerializeField] private EndingSystem ES;
+    [SerializeField] private MenuNavigation MN;
+
+    public AudioSource MyASS;
 
     public bool _pauseLock = false;
 
@@ -36,7 +39,7 @@ public class PlayerControl : MonoBehaviour
             _clipPlayedFor += Time.deltaTime;
         }
 
-        if(_clipPlayedFor >= 20f)
+        if(_clipPlayedFor >= 122f)
         {
             _timesPaused = 0;
             _clipPlayedFor = 0;
@@ -45,7 +48,7 @@ public class PlayerControl : MonoBehaviour
             ES.ActivateEnding(12);
         }
 
-        if(_timesPaused >= 10)
+        if(_timesPaused >= 20)
         {
             _timesPaused = 0;
             _clipPlayedFor = 0;
@@ -54,20 +57,20 @@ public class PlayerControl : MonoBehaviour
             ES.ActivateEnding(1);
         }
         ///CrowButton
-        if(_clipPlayedFor >= 10f && _clipPlayedFor <= 10.5f)
+        if(_clipPlayedFor >= 16f && _clipPlayedFor <= 16.5f)
         {
             _crowButton.SetActive(true);
         }
-        if(_clipPlayedFor >= 13f && _clipPlayedFor <= 13.5f)
+        if(_clipPlayedFor >= 31f && _clipPlayedFor <= 31.5f)
         {
             _crowButton.SetActive(false);
         }
         ///DeerButton
-        if (_clipPlayedFor >= 5f && _clipPlayedFor <= 5.5f)
+        if (_clipPlayedFor >= 88f && _clipPlayedFor <= 88.5f)
         {
             _deerButton.SetActive(true);
         }
-        if (_clipPlayedFor >= 8f && _clipPlayedFor <= 8.5f)
+        if (_clipPlayedFor >= 93f && _clipPlayedFor <= 93.5f)
         {
             _deerButton.SetActive(false);
         }
@@ -76,6 +79,8 @@ public class PlayerControl : MonoBehaviour
         {
             if (!_pauseMenu.activeInHierarchy)
             {
+                MyASS.Pause();
+                MN.ASss.UnPause();
                 PauseVideo();
                 _paused = true;
                 _timesPaused++;
@@ -83,6 +88,8 @@ public class PlayerControl : MonoBehaviour
             }
             else
             {
+                MyASS.UnPause();
+                MN.ASss.Pause();
                 PlayVideo();
                 _paused = false;
             }

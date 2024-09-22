@@ -16,6 +16,7 @@ public class EndingSystem : MonoBehaviour
     [SerializeField] private GameObject _playButton;
     [SerializeField] private OldTVHints _oldTV;
     [SerializeField] private AudioSource ASS;
+    [SerializeField] private MenuNavigation MN;
 
     private string _trophiesEarned;
 
@@ -54,6 +55,7 @@ public class EndingSystem : MonoBehaviour
     public void ActivateEnding(int _whichEnding)
     {
         ASS.Play();
+        MN.ASss.Pause();
         PC.PauseVideo();
         _static.SetActive(true);
         _playerController.SetActive(false);
@@ -91,9 +93,12 @@ public class EndingSystem : MonoBehaviour
     public void PlayButtonClick()
     {
         ASS.Stop();
+        MN.ASss.Play();
+        MN.ASss.Pause();
         _Z.ZoomIn();
         _static.SetActive(false);
         _playerController.SetActive(true);
+        PC.MyASS.Play();
         PC.ReplayVideo();
         PC._pauseLock = false;
 
