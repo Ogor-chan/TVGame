@@ -12,10 +12,20 @@ public class DeerMinigame : MonoBehaviour
     [SerializeField] private GameObject _miniGame;
 
 
+
+
     private int _targetsHit;
     private float _timeForTarget;
 
     private GameObject _currentTarget;
+
+    private EndingSystem ES;
+    [SerializeField] private PlayerControl PC;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+    }
 
     private void OnEnable()
     {
@@ -27,7 +37,11 @@ public class DeerMinigame : MonoBehaviour
 
         if (_targetsHit >= 20)
         {
-            print("win");
+            Cursor.visible = true;
+            _targetsHit = 0;
+            PC._pauseLock = false;
+            _miniGame.SetActive(false);
+            ES.ActivateEnding(13);
             return;
         }
 
@@ -47,7 +61,7 @@ public class DeerMinigame : MonoBehaviour
         _spawnedObject.transform.SetParent(transform,true);
         _spawnedObject.transform.localScale *= Random.Range(0.3f, 1.5f);
         _spawnedObject.GetComponent<DeerBehaviour>().DM = this.GetComponent<DeerMinigame>();
-        _spawnedObject.GetComponent<Button>().onClick.AddListener(delegate { SpawnTarget(); });
+        _spawnedObject.GetComponent<Button>().onClick.AddListener(delegate { TargetHit(); });
 
         Image _objectImage = _spawnedObject.GetComponent<Image>();
         Color _color = new Color(_objectImage.color.r, _objectImage.color.g,
@@ -62,6 +76,7 @@ public class DeerMinigame : MonoBehaviour
         Cursor.visible = true;
         _targetsHit = 0;
         print("lost");
+        PC._pauseLock = false;
         _pauseMenu.SetActive(true);
         _miniGame.SetActive(false);
     }

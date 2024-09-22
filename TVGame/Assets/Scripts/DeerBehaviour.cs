@@ -9,7 +9,7 @@ public class DeerBehaviour : MonoBehaviour
     void Update()
     {
         _timeAlive += Time.deltaTime;
-        if(_timeAlive >= 2f)
+        if(_timeAlive >= 3f)
         {
             DM.Lost();
             Destroy(this.gameObject);

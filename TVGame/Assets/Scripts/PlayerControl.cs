@@ -27,7 +27,6 @@ public class PlayerControl : MonoBehaviour
     private void Start()
     {
         ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
-        PauseVideo();
     }
 
     void Update()
@@ -39,13 +38,19 @@ public class PlayerControl : MonoBehaviour
 
         if(_clipPlayedFor >= 20f)
         {
-            print("win");
+            _timesPaused = 0;
+            _clipPlayedFor = 0;
+            _pauseMenu.SetActive(false);
+            _pauseLock = true;
+            ES.ActivateEnding(12);
         }
 
         if(_timesPaused >= 10)
         {
             _timesPaused = 0;
             _clipPlayedFor = 0;
+            _pauseMenu.SetActive(false);
+            _pauseLock = true;
             ES.ActivateEnding(1);
         }
         ///CrowButton

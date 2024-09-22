@@ -8,10 +8,18 @@ public class QuestionANDTelephonePuzzle : MonoBehaviour
     [SerializeField] private TMP_InputField _questionInput;
     [SerializeField] private GameObject _responseText;
     private bool Lock;
+    [SerializeField] private GameObject _helpMenu;
 
     private string _number;
     [SerializeField] private TMP_Text _numberDisplay;
     private bool NumberLock;
+
+    private EndingSystem ES;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+    }
     public void ConfirmButton()
     {
         if (Lock)
@@ -21,7 +29,9 @@ public class QuestionANDTelephonePuzzle : MonoBehaviour
         if(_questionInput.text == "What is a god?"||
             _questionInput.text == "what is a god?")
         {
-            print("win");
+            _questionInput.text = "";
+            _helpMenu.SetActive(false);
+            ES.ActivateEnding(4);
         }
         else
         {
@@ -49,9 +59,12 @@ public class QuestionANDTelephonePuzzle : MonoBehaviour
         _numberDisplay.text = _number;
         if(_number.Length == 6)
         {
-            if(_number == "126667")
+            if(_number == "796662")
             {
-                print("win");
+                _numberDisplay.text = "";
+                _number = "";
+                _helpMenu.SetActive(false);
+                ES.ActivateEnding(3);
             }
             else
             {

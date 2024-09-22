@@ -30,9 +30,16 @@ public class AdvancedSettingsCode : MonoBehaviour
     [SerializeField] private GameObject _miniGame;
     [SerializeField] private GameObject _advancedSettingsMenu;
     private int _arrowCode;
+
+    private EndingSystem ES;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+    }
     public void InputChanged()
     {
-        if(_codeInput.text == "123")
+        if(_codeInput.text == "846")
         {
             _correctText.SetActive(true);
             _codeInput.interactable = false;
@@ -75,12 +82,22 @@ public class AdvancedSettingsCode : MonoBehaviour
             _serialNumber = 0000;
         }
 
-        _serialNumberText.text = _serialNumber.ToString("D4");
-
         if(_serialNumber == 3012)
         {
-            print("win");
+            _loginInput.text = "";
+            _passwordInput.text = "";
+            _firstTimePress = false;
+            _popupAble.SetActive(false);
+            _lockScreen.SetActive(true);
+            _menuContent.SetActive(false);
+            _correctText.SetActive(false);
+            _codeInput.text = "";
+            _codeInput.interactable = true;
+            _serialNumber = 0000;
+            _advancedSettingsMenu.SetActive(false);
+            ES.ActivateEnding(9);
         }
+        _serialNumberText.text = _serialNumber.ToString("D4");
     }
 
     public void ResetClick()
@@ -92,9 +109,20 @@ public class AdvancedSettingsCode : MonoBehaviour
         }
         else
         {
-            if(_loginInput.text == "crazy" && _passwordInput.text == "1234")
+            if(_loginInput.text == "icanseeyou" && _passwordInput.text == "behindyou")
             {
-                print("win");
+                _loginInput.text = "";
+                _passwordInput.text = "";
+                _firstTimePress = false;
+                _popupAble.SetActive(false);
+                _lockScreen.SetActive(true);
+                _menuContent.SetActive(false);
+                _correctText.SetActive(false);
+                _codeInput.text = "";
+                _codeInput.interactable = true;
+                _serialNumber = 0000;
+                _advancedSettingsMenu.SetActive(false);
+                ES.ActivateEnding(10);
             }
             else
             {
@@ -127,7 +155,7 @@ public class AdvancedSettingsCode : MonoBehaviour
         {
             _arrowCode = int.Parse(_arrowCode.ToString().Remove(0, 1));
         }
-        if(_arrowCode == 111222)
+        if(_arrowCode == 112122)
         {
             _miniGame.SetActive(true);
             _advancedSettingsMenu.SetActive(false);

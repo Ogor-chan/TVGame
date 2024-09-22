@@ -14,11 +14,8 @@ public class MenuNavigation : MonoBehaviour
     [SerializeField] private GameObject _deerGame;
     [SerializeField] private GameObject _animalMenu;
 
-    private PlayerControl PC;
-    private void Start()
-    {
-        PC = GameObject.Find("PlayerController").GetComponent<PlayerControl>();
-    }
+
+    [SerializeField] private PlayerControl PC;
     public void settingsMenuClick()
     {
         PC._pauseLock = true;

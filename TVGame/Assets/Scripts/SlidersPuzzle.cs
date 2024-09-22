@@ -17,7 +17,17 @@ public class SlidersPuzzle : MonoBehaviour
     private float _lastSliderValue3;
     private float _lastSliderValue4;
 
+    [SerializeField] private GameObject _settingsMenu;
+
+    private EndingSystem ES;
+
+
     private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+    }
+
+    private void OnEnable()
     {
         _lastSliderValue1 = _slider1.value;
         _lastSliderValue2 = _slider2.value;
@@ -89,7 +99,17 @@ public class SlidersPuzzle : MonoBehaviour
                 {
                     if(_slider4.value>= 0.4f && _slider4.value<= 0.5f)
                     {
-                        print("Win");
+                        _slider1.value = 0;
+                        _slider2.value = 0;
+                        _slider3.value = 0;
+                        _slider4.value = 0;
+                        _lastSliderValue1 = 0;
+                        _lastSliderValue1 = 0;
+                        _lastSliderValue1 = 0;
+                        _lastSliderValue1 = 0;
+
+                        _settingsMenu.SetActive(false);
+                        ES.ActivateEnding(11);
                     }
                 }
             }

@@ -9,7 +9,15 @@ public class AgentPuzzle : MonoBehaviour
     [SerializeField] private List<GameObject> _slides;
     [SerializeField] private Slider _timerSlider;
 
-    private float _timerSpeed = 0.25f;
+    private float _timerSpeed = 0.15f;
+
+    private EndingSystem ES;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+
+    }
     private void Update()
     {
         _timerSlider.value -= _timerSpeed * Time.deltaTime;
@@ -147,7 +155,10 @@ public class AgentPuzzle : MonoBehaviour
         _timerSlider.value = 1;
         if(_currentSlide == 9)
         {
-            print("win");
+            _slides[_currentSlide].SetActive(false);
+            _currentSlide = 0;
+            _miniGameWindow.SetActive(false);
+            ES.ActivateEnding(7);
             return;
         }
         _slides[_currentSlide].SetActive(false);

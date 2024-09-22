@@ -4723,6 +4723,19 @@ MonoBehaviour:
   _static: {fileID: 520819700}
   _trophies:
   - {fileID: 1585623205}
+  - {fileID: 523214406}
+  - {fileID: 730268033}
+  - {fileID: 299410724}
+  - {fileID: 867858969}
+  - {fileID: 1055260667}
+  - {fileID: 1541637689}
+  - {fileID: 1470749148}
+  - {fileID: 1135647038}
+  - {fileID: 899743577}
+  - {fileID: 1409475185}
+  - {fileID: 353734689}
+  - {fileID: 937008267}
+  - {fileID: 2015740831}
   _playerController: {fileID: 1553279602}
   _playButton: {fileID: 1147366184}
 --- !u!4 &279932062
@@ -5169,6 +5182,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434c191fb69f9bd4d8aa3899d5a6d378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animalMenu: {fileID: 4603530}
+  _toggles:
+  - {fileID: 1091883416}
+  - {fileID: 1763563837}
+  - {fileID: 1274641951}
+  - {fileID: 1429485}
+  - {fileID: 394142223}
+  - {fileID: 355673149}
+  - {fileID: 1014230378}
+  - {fileID: 2108467667}
+  - {fileID: 2022592010}
 --- !u!114 &300156633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6630,7 +6654,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7766,7 +7790,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Japanese
       m_Image: {fileID: 0}
-    - m_Text: Latin
+    - m_Text: Finnish
       m_Image: {fileID: 0}
     - m_Text: German
       m_Image: {fileID: 0}
@@ -9838,7 +9862,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10015,7 +10039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -727, y: 301}
+  m_AnchoredPosition: {x: -747, y: 301}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523214408
@@ -12673,7 +12697,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13072,6 +13096,7 @@ MonoBehaviour:
   _dropDown2: {fileID: 1593716494}
   _dropDown3: {fileID: 1626878006}
   _dropdown4: {fileID: 2123671053}
+  _settingsMenu: {fileID: 1004936266}
 --- !u!114 &740965498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14565,7 +14590,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14700,7 +14725,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18051,7 +18076,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20316,6 +20341,7 @@ MonoBehaviour:
   - {x: 61, y: -572, z: 0}
   - {x: -862, y: 233, z: 0}
   - {x: 900, y: 0, z: 0}
+  _pauseMenu: {fileID: 1352183607}
   uiElement: {fileID: 1100275546}
   targetPosition: {x: 190, y: 212, z: 0}
   moveSpeed: 1000
@@ -21306,7 +21332,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -21921,6 +21947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questionInput: {fileID: 1066945390}
   _responseText: {fileID: 1227479040}
+  _helpMenu: {fileID: 549239132}
   _numberDisplay: {fileID: 1762763666}
 --- !u!1 &1239193151
 GameObject:
@@ -23887,6 +23914,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392193110}
   m_CullTransparentMesh: 1
+--- !u!1 &1409475185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409475186}
+  - component: {fileID: 1409475188}
+  - component: {fileID: 1409475187}
+  m_Layer: 5
+  m_Name: Trophy14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1409475186
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409475185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1556047811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -392, y: 725}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1409475187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409475185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1945536058, guid: e72400a0c9f7d5b4caa2c5e4dc6804f8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1409475188
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409475185}
+  m_CullTransparentMesh: 1
 --- !u!1 &1409506051
 GameObject:
   m_ObjectHideFlags: 0
@@ -24180,7 +24282,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -24673,7 +24775,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -25474,7 +25576,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -26322,7 +26424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1553279603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26341,6 +26443,7 @@ MonoBehaviour:
   _deerButton: {fileID: 233257703}
   _crowButton: {fileID: 1100275545}
   _videoPlayer: {fileID: 271277557}
+  ES: {fileID: 0}
   _pauseLock: 0
 --- !u!4 &1553279604
 Transform:
@@ -26533,6 +26636,7 @@ RectTransform:
   - {fileID: 1470749149}
   - {fileID: 1135647039}
   - {fileID: 2015740832}
+  - {fileID: 1409475186}
   m_Father: {fileID: 2051143590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -27476,7 +27580,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Japanese
       m_Image: {fileID: 0}
-    - m_Text: Latin
+    - m_Text: Finnish
       m_Image: {fileID: 0}
     - m_Text: German
       m_Image: {fileID: 0}
@@ -28452,7 +28556,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Japanese
       m_Image: {fileID: 0}
-    - m_Text: Latin
+    - m_Text: Finnish
       m_Image: {fileID: 0}
     - m_Text: German
       m_Image: {fileID: 0}
@@ -31325,6 +31429,7 @@ MonoBehaviour:
   _advancedSettingsMenuObject: {fileID: 130796222}
   _deerGame: {fileID: 1551986343}
   _animalMenu: {fileID: 4603530}
+  PC: {fileID: 1553279603}
 --- !u!4 &1739505947
 Transform:
   m_ObjectHideFlags: 0
@@ -32887,6 +32992,7 @@ MonoBehaviour:
   _slider2: {fileID: 752534707}
   _slider3: {fileID: 312941473}
   _slider4: {fileID: 1707902784}
+  _settingsMenu: {fileID: 1004936266}
 --- !u!1 &1864368280
 GameObject:
   m_ObjectHideFlags: 0
@@ -37432,7 +37538,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Japanese
       m_Image: {fileID: 0}
-    - m_Text: Latin
+    - m_Text: Finnish
       m_Image: {fileID: 0}
     - m_Text: German
       m_Image: {fileID: 0}

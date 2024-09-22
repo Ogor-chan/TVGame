@@ -10,27 +10,42 @@ public class CrowPuzzle : MonoBehaviour
     private Image _myImage;
     private Color _myColor;
 
+    [SerializeField] private GameObject _pauseMenu;
+
     public RectTransform uiElement;
     public Vector3 targetPosition;
     public float moveSpeed = 2.0f;
 
     private bool isMoving = false;
 
+    private EndingSystem ES;
+    private Vector3 _initPos;
+
     [SerializeField] private Animator _animator;
     private void Start()
     {
         _myImage = GetComponent<Image>();
         _myColor = _myImage.color;
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+        _initPos = transform.position;
     }
     public void CrowPressed()
     {
+        if (isMoving)
+        {
+            return;
+        }
         _myImage.color = new Color(_myColor.r, _myColor.g,
             _myColor.b, _myColor.a /1.3f);
         _myColor = _myImage.color;
         _timesPressed++;
         if(_timesPressed >= 7)
         {
-            print("Win");
+            _myImage.color = new Color(_myColor.r, _myColor.g,
+    _myColor.b, 1);
+            transform.position = _initPos;
+            _pauseMenu.SetActive(false);
+            ES.ActivateEnding(5);
             return;
         }
         targetPosition = _crowLocations[_timesPressed];

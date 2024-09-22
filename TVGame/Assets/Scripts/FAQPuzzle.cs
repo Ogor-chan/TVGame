@@ -14,6 +14,12 @@ public class FAQPuzzle : MonoBehaviour
     private int _currentSlide = 0;
     private int _points;
 
+    private EndingSystem ES;
+
+    private void Start()
+    {
+        ES = GameObject.Find("Endings").GetComponent<EndingSystem>();
+    }
     public void FAQButtonClick()
     {
         _miniGameWindow.SetActive(true);
@@ -82,12 +88,18 @@ public class FAQPuzzle : MonoBehaviour
         {
             if(_points == 7)
             {
-                print("Win");
+                _points = 0;
+                _currentSlide = 0;
+                _miniGameWindow.SetActive(false);
+                ES.ActivateEnding(8);
             }
-            _points = 0;
-            _currentSlide = 0;
-            _miniGameWindow.SetActive(false);
-            _helpMenu.SetActive(true);
+            else
+            {
+                _points = 0;
+                _currentSlide = 0;
+                _miniGameWindow.SetActive(false);
+                _helpMenu.SetActive(true);
+            }
         }
         else
         {

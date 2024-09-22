@@ -22,7 +22,7 @@ public class HelpPuzzle : MonoBehaviour
         }
         else
         {
-            if(_inputField.text == "dupa123")
+            if(_inputField.text == "frost101")
             {
                 _helpMenu.SetActive(true);
                 _inputField.text = "";

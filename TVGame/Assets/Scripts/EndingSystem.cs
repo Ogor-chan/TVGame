@@ -23,13 +23,14 @@ public class EndingSystem : MonoBehaviour
         _trophiesEarned = PlayerPrefs.GetString("save");
         PC = _playerController.GetComponent<PlayerControl>();
 
+        print(_trophiesEarned);
         int whichLoop = 0;
         foreach (char c in _trophiesEarned)
         {
             int ye = c - '0';
             if(ye == 1)
             {
-                _trophies[whichLoop].SetActive(true);
+                _trophies[whichLoop - 1].SetActive(true);
             }
             whichLoop++;
         }
@@ -41,9 +42,9 @@ public class EndingSystem : MonoBehaviour
         {
             ActivateEnding(0);
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            PlayerPrefs.SetString("save", 000000.ToString());
+            PlayerPrefs.SetString("save", 9000000000000009.ToString());
             PlayerPrefs.Save();
         }
     }
@@ -54,7 +55,7 @@ public class EndingSystem : MonoBehaviour
         _playerController.SetActive(false);
 
         StringBuilder modifiedString = new StringBuilder(_trophiesEarned);
-        modifiedString[_whichEnding] = (char)1;
+        modifiedString[_whichEnding + 1] = (char)('0'+ 1);
         _trophiesEarned = modifiedString.ToString();
         PlayerPrefs.SetString("save", _trophiesEarned);
         PlayerPrefs.Save();
