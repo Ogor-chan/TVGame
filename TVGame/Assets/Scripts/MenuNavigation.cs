@@ -12,6 +12,7 @@ public class MenuNavigation : MonoBehaviour
     [SerializeField] private GameObject _helpMenuObject;
     [SerializeField] private GameObject _advancedSettingsMenuObject;
     [SerializeField] private GameObject _deerGame;
+    [SerializeField] private GameObject _animalMenu;
 
     private PlayerControl PC;
     private void Start()
@@ -63,5 +64,19 @@ public class MenuNavigation : MonoBehaviour
         PC._pauseLock = true;
         _deerGame.SetActive(true);
         _pauseMenuObject.SetActive(false);
+    }
+
+    public void AnimalMenuClick()
+    {
+        PC._pauseLock = true;
+        _animalMenu.SetActive(true);
+        _pauseMenuObject.SetActive(false);
+    }
+
+    public void BackFromAnimalMenuClick()
+    {
+        PC._pauseLock = false;
+        _animalMenu.SetActive(false);
+        _pauseMenuObject.SetActive(true);
     }
 }
